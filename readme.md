@@ -7,8 +7,8 @@
 ### 2.项目初始化
 node安装完成后，使用
 ```
-    git clone https://github.com/Dr-SummerFlower/node.ghe.git     //github
-    git clone https://gitee.com/ghe1213/node.ghe.git              //gitee
+    git clone https://github.com/Dr-SummerFlower/nodeprogect.git     //github
+    git clone https://gitee.com/Dr_Summerflower/node_midterm.git     //gitee
 ```
 ### 3.克隆项目
 克隆后进入项目目录`cd node.ghe`

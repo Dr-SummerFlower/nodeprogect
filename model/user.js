@@ -7,6 +7,7 @@
 // 1 -- 引入 mongoose 模块 
 // mongoose.Schema()  生成一个集合规则
 const mongoose = require('mongoose')
+const md5 = require('md5');
 
 // 2-- 创建用户集合----  用户表
 // mongoose.Schema()方法返回值是一个构造函数，需要new实例化出来一个对象
@@ -53,7 +54,7 @@ const User = mongoose.model('User', userSchema)
 // User.create({
 //     username: 'zhangsan',
 //     email: 'zhangsan@qq.com',
-//     password: '123456',
+//     password: md5('123456'),
 //     role: 'admin',
 //     state: 0
 // }).then(()=>{console.log('用户创建成功')})

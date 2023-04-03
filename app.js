@@ -12,6 +12,8 @@ const bodyParser = require('body-parser');
 //导入数据库连接
 require('./model/connect.js')
 // const user = require('./model/user.js')
+const session = require('express-session')
+
 
 
 // 导入home路由
@@ -33,6 +35,14 @@ app.set('view engine', 'html')
 app.use(express.static(path.join(__dirname, 'public')))
 //配置body-parser
 app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use(session({
+    secret:'keyboard cat',
+    saveUninitialized:false,
+    cookie:{
+        maxAge:24*60*60*1000
+    }
+}))
 
 // 挂载home和admin路由
 app.use('/home', home);

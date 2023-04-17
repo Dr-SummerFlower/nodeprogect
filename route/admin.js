@@ -26,6 +26,7 @@ admin.get('/article', require('./admin/get_article'))
 //文章编辑页面路由
 admin.get('/article-edit', require('./admin/get_article-edit'))
 admin.get('/logout', require('./admin/get_logout'))
+admin.get('/success',require('./admin/get_success'))
 
 //----------------post-------------------
 admin.post('/login', require('./admin/post_login'))

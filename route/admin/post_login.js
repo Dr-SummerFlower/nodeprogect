@@ -1,25 +1,25 @@
 const md5 = require('md5');
 const { User } = require('../../model/user');
 
-module.exports = async (req,res)=>{
+module.exports = async (req, res) => {
     const user = req.body
     //服务器端验证客户端传递的数据
-    if(user.email.trim().length == 0 || user.password.trim().length == 0){
+    if (user.email.trim().length == 0 || user.password.trim().length == 0) {
         res.status(400).render('admin/error', {
-            msg:'请输入邮箱或密码'
+            msg: '请输入邮箱或密码'
         })
         return
-    }else{
-        const result = await User.findOne({email:user.email})
-        if(!result){
+    } else {
+        const result = await User.findOne({ email: user.email })
+        if (!result) {
             res.status(400).render('admin/error', {
-                msg:'请输入正确邮箱或密码'
+                msg: '请输入正确邮箱或密码'
             })
             return
         }
-        if(md5(user.password) !== result.password){
-            res.status(400).render('admin/error',{
-                msg:'请输入正确邮箱或密码'
+        if (md5(user.password) !== result.password) {
+            res.status(400).render('admin/error', {
+                msg: '请输入正确邮箱或密码'
             })
             return
         }

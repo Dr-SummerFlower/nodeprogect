@@ -10,7 +10,7 @@ const admin = express.Router();
 
 // 二级路由
 //----------------get-------------------
-admin.get('/', (req,res)=>{
+admin.get('/', (req, res) => {
     res.send('管理首页');
 })
 //登录页面路由
@@ -23,14 +23,20 @@ admin.get('/user-add', require('./admin/get_user-add'))
 admin.get('/user-edit', require('./admin/get_user-edit'))
 //文章页面路由
 admin.get('/article', require('./admin/get_article'))
-//文章编辑页面路由
+//文章添加页面
+admin.get('/article-add', require('./admin/get_article-add'))
+//文章编辑页面路由3
 admin.get('/article-edit', require('./admin/get_article-edit'))
 admin.get('/logout', require('./admin/get_logout'))
-admin.get('/success',require('./admin/get_success'))
+admin.get('/success', require('./admin/get_success'))
+admin.get('/user-del', require('./admin/get_user-del.js'))
 
 //----------------post-------------------
 admin.post('/login', require('./admin/post_login'))
 admin.post('/user-add', require('./admin/post_user-add-create'))
+admin.post('/user-edit', require('./admin/post_user-edit'))
+
+admin.post('/article-add', require('./admin/post_article-add-create'))
 
 // 导出admin模块
-module.exports=admin;
+module.exports = admin;

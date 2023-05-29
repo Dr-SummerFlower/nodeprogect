@@ -36,7 +36,7 @@
 
 
         // 要获取到提交的表单，在客户端没有验证成功之前，组织其默认提交的行为
-        $('#loginForm').on('submit',function(){
+        $('#loginForm').on('submit', function () {
             // 再提交之前完成客户端验证
             // 验证邮箱，密码有没有输入
             // 需不需要获取用户输入的邮箱和密码
@@ -47,10 +47,10 @@
             var result = serializeToJson($(this))
             // console.log(result)  //{email: 'zhangsan@qq.com', password: '123456'}
 
-            if(result.email.trim().length == 0 || result.password.trim().length == 0) {
+            if (result.email.trim().length == 0 || result.password.trim().length == 0) {
                 // 邮箱没有输入
                 alert('请输入邮箱或者密码')
-                return false;
+
             }
 
             //   [ {name: 'email',value:'zhangsan@qq.com'} ,{name: 'password',value:'123456'}]

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,18 +9,21 @@
     <style>
         p {
             background-color: skyblue;
-            color: white;
+            color: #fff;
         }
     </style>
 </head>
+
 <body>
     <div>
         <p>{{msg}}</p>
     </div>
 </body>
+
 </html>
 <script>
-    setTimeout(()=>{
+    // 三秒后返回登录页
+    setTimeout(() => {
         location.href = '/admin/user'
-    },3000);
+    }, 3000);
 </script>

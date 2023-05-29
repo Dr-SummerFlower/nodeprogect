@@ -9,17 +9,13 @@ const express = require('express');
 const home = express.Router();
 
 // 二级路由
-home.get('/', (req,res)=>{
+home.get('/', (req, res) => {
     res.send('博客首页');
 })
 //文章详情页路由
-home.get('/article', (req,res)=>{
-    res.render('home/article')
-})
+home.get('/article', require('./home/article'))
 //文章预览页路由
-home.get('/default', (req,res)=>{
-    res.render('home/default')
-})
+home.get('/default', require('./home/default'))
 
 // 暴露home
-module.exports=home;
+module.exports = home;

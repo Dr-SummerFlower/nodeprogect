@@ -16,9 +16,9 @@ a, a:hover {
 	text-decoration: none;
 }
 
-/* a:hover {
+a:hover {
 
-} */
+}
 
 h4 {
 	margin: 0;
@@ -130,9 +130,9 @@ h4 {
 	margin-top: 50px;
 }
 
-/* .menu li {
+.menu li {
 
-} */
+}
 
 .menu .item {
 	display: block;

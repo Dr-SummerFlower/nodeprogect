@@ -32,10 +32,7 @@ module.exports = async (req, res) => {
         //供header.htmk使用
         //在express框架，我们会把公共模块需要用到的数据库放在app.locals对象中
         //app  服务器模块比较特殊，不用导出，不用导入就可以在其他模块使用
-        req.app.locals.username = result.username
-
-
+        req.app.locals.userInfo = result
         res.redirect('/admin/user')
     }
-    // res.send(req.body)
 }

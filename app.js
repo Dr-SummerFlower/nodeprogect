@@ -9,6 +9,10 @@ const express = require('express');
 const path = require('path')
 // 导入body-parser模块
 const bodyParser = require('body-parser');
+//导入moment模块，用于格式化日期和时间字符串
+const moment = require('moment');
+//导入art-template模板引擎，用于模板文件的渲染。
+const template = require('art-template');
 // 导入数据库连接
 require('./model/connect.js')
 // const user = require('./model/user.js')
@@ -45,6 +49,8 @@ app.use(session({
         maxAge: 24 * 60 * 60 * 1000
     }
 }))
+
+template.defaults.imports.moment = moment;
 
 //创建中间件拦截未登录用户
 app.use('/admin', require('./middleware/guard.js'))

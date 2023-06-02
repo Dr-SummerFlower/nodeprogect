@@ -1,5 +1,5 @@
 
-const { User, validataUser } = require('../../model/user')
+const { User, validateUser } = require('../../model/user')
 const md5 = require('md5')
 
 module.exports = (req, res) => {
@@ -9,7 +9,7 @@ module.exports = (req, res) => {
 
     async function run() {
         try {
-            await validataUser(result)
+            await validateUser(result)
             //  res.send('表单格式正确')
             //  做入库操作----下节课讲
             const f = await User.findOne({ email: result.email })
@@ -35,7 +35,5 @@ module.exports = (req, res) => {
         }
 
     }
-    run()
-
-
+    run();
 }
